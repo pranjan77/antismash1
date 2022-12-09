@@ -35,8 +35,8 @@
                     "narrative_system_variable": "workspace_id",
                     "target_property": "workspace_id"
                 },{
-                    "input_parameter": "parameter_1",
-                    "target_property": "parameter_1"
+                    "input_parameter": "genome_refs",
+                    "target_property": "genome_refs"
                 }
             ],
             "output_mapping": [
