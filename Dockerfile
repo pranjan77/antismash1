@@ -29,7 +29,11 @@ RUN conda create -n py39 python=3.9 \
 RUN sudo wget https://dl.secondarymetabolites.org/antismash-stretch.list -O /etc/apt/sources.list.d/antismash.list
 RUN sudo wget -q -O- https://dl.secondarymetabolites.org/antismash.asc | sudo apt-key add -
 RUN sudo apt-get update
-RUN apt-get install -y  hmmer2 hmmer diamond-aligner fasttree prodigal ncbi-blast+ muscle glimmerhmm
+RUN apt-get install -y  hmmer2 hmmer  fasttree prodigal ncbi-blast+ muscle glimmerhmm
+RUN wget --quiet https://github.com/bbuchfink/diamond/releases/download/v2.0.9/diamond-linux64.tar.gz && \
+    tar -zxf diamond-linux64.tar.gz diamond && \
+    mv diamond /usr/bin/diamond && \
+    diamond version
 
 WORKDIR /tmp
 RUN wget https://dl.secondarymetabolites.org/releases/6.0.0/antismash-6.0.0.tar.gz && tar -zxf antismash-6.0.0.tar.gz 
