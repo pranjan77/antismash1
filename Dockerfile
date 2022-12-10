@@ -20,7 +20,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN conda create -n py39 python=3.9 \
     && source activate py39 \
     && conda install nose jinja2 \
-    && pip3 install jsonrpcbase numpy biopython \
+    && pip3 install jsonrpcbase numpy pandas biopython \
     && pip3 install coverage
 
 #RUN apt-get install -y apt-transport-https
@@ -51,6 +51,7 @@ RUN source activate py39 && download-antismash-databases
 COPY . /kb/module
 RUN cp /kb/module/InsdcIO.py /miniconda/envs/py39/lib/python3.9/site-packages/Bio/SeqIO/InsdcIO.py
 
+RUN pip install pandas
 
 RUN mkdir -p /kb/module/work
 RUN chmod -R a+rw /kb/module

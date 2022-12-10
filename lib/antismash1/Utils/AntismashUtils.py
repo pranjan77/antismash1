@@ -13,6 +13,8 @@ from installed_clients.AssemblyUtilClient import AssemblyUtil
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.WorkspaceClient import Workspace
 from installed_clients.KBaseReportClient import KBaseReport
+from .AntismashParser import AntismashParser
+
 
 ANTISMASH_SCRIPT="/kb/module/lib/antismash1/Utils/run_antismash.sh"
 
@@ -32,6 +34,7 @@ class AntismashUtils:
         self.gfu = GenomeFileUtil(self.callback_url)
         self.au = AssemblyUtil(self.callback_url)
         self.report = KBaseReport (self.callback_url)
+        self.result_dir = ""
         
         self.workspace_name = params['workspace_name']
     def _mkdir_p(self, path):
@@ -176,11 +179,40 @@ class AntismashUtils:
             'report_ref': report_info['ref']
         }
 
+    def find_antismash_json_outputs(self):
+          directory = self.result_dir
+          print ("====================")
+          print ("=================+++++" + directory + "-------------------------------\n")
+          print ("====================")
+
+          json_files = list()
+          for genome in os.listdir(directory):
+              newpath  = os.path.join(directory, genome)
+              print (newpath)
+              if os.path.isdir(newpath):
+                  for npath in os.listdir(newpath):
+                      if ".json" in npath:
+                          json_path = os.path.join(newpath,npath)
+                          json_files.append(json_path)
+          return json_files  
+
+    def create_html_tables_from_json(self):
+        #json_list = ["./Bacillus_sp_OV322_assembly2.json", "./Bacillus_sp_OV322_assembly.json"]
+        json_list = self.find_antismash_json_outputs()
+        AP = AntismashParser()
+        antismash_parse_data = AP.process_multiple_genomes(json_list)
+        key = "mibig"
+        df = AP.generate_tsv_from_lists(antismash_parse_data, key)
+        mibigoutput_file = os.path.join(self.result_dir, "mibig.html")
+        htmlpath = AP.get_html_from_df(df, mibigoutput_file)
         
     def run_antismash_main(self,genome_refs):
             result_dir = os.path.join(self.scratch, str(uuid.uuid4()))
+            self.result_dir = result_dir
+  
             self._mkdir_p(result_dir)
             html_str = "<html><body><pre>"
+            html_str += "<a href='mibig.html'>migbig results</a>\n"
             for genome_ref in genome_refs:
                 g_download = self.get_fasta_gff_file_path(genome_ref)
                 gff_file_path = g_download.get('gff')
@@ -190,10 +222,13 @@ class AntismashUtils:
                 genome_folder_path = os.path.join(result_dir, genome_folder_name)
                 run_index = self.run_antismash_single(result_dir, gff_file_path, fasta_file_path,  genome_folder_name) 
                 html_str += "<a href='./" + str(run_index) + "'>" + genome_folder_name + "</a>\n";
-
+                      
             html_str += "</pre></body></html>"
             print (html_str)
             self.add_html_page(result_dir, html_str)
+
+            self.create_html_tables_from_json()
             output = self.create_html_report(result_dir, self.workspace_name)            
             return output
+
 
