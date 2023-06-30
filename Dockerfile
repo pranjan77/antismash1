@@ -1,4 +1,4 @@
-FROM kbase/sdkbase2:python
+FROM kbase/sdkpython:3.8.0
 MAINTAINER KBase Developer
 # -----------------------------------------
 # In this section, you can install any system dependencies required
@@ -23,33 +23,61 @@ RUN conda create -n py39 python=3.9 \
     && pip3 install jsonrpcbase numpy pandas biopython \
     && pip3 install coverage
 
-#RUN apt-get install -y apt-transport-https
-#COPY ./ca-certificates.conf /etc/ca-certificates.conf
-#RUN update-ca-certificates
-RUN sudo wget https://dl.secondarymetabolites.org/antismash-stretch.list -O /etc/apt/sources.list.d/antismash.list
-RUN sudo wget -q -O- https://dl.secondarymetabolites.org/antismash.asc | sudo apt-key add -
-RUN sudo apt-get update
-RUN apt-get install -y  hmmer2 hmmer  fasttree prodigal ncbi-blast+ muscle glimmerhmm
-RUN wget --quiet https://github.com/bbuchfink/diamond/releases/download/v2.0.9/diamond-linux64.tar.gz && \
-    tar -zxf diamond-linux64.tar.gz diamond && \
-    mv diamond /usr/bin/diamond && \
-    diamond version
 
 WORKDIR /tmp
-RUN wget https://dl.secondarymetabolites.org/releases/6.0.0/antismash-6.0.0.tar.gz && tar -zxf antismash-6.0.0.tar.gz 
 
-RUN sed -i 's/biopython >=1.78/biopython==1.76/' antismash-6.0.0/setup.py
-RUN sed -i 's/jinja2/jinja2==3.0.0/' antismash-6.0.0/setup.py
+RUN apt-get update && \
+    apt-get -y install apt-transport-https gnupg
 
-RUN source activate py39 && pip install ./antismash-6.0.0
-RUN source activate py39 && download-antismash-databases
+RUN wget http://dl.secondarymetabolites.org/antismash-stretch.list -O /etc/apt/sources.list.d/antismash.list && \
+    wget -q -O- http://dl.secondarymetabolites.org/antismash.asc | apt-key add -
+
+RUN apt-get update && \
+    apt-get -y install hmmer2 hmmer diamond-aligner fasttree prodigal ncbi-blast+ muscle glimmerhmm
+
+
+
+
+#RUN wget --quiet https://github.com/bbuchfink/diamond/releases/download/v2.0.9/diamond-linux64.tar.gz && \
+#    tar -zxf diamond-linux64.tar.gz diamond && \
+#    mv diamond /usr/bin/diamond && \
+#    diamond version
+
+
+RUN wget https://dl.secondarymetabolites.org/releases/7.0.0/antismash-7.0.0.tar.gz  \
+      && tar -zxf antismash-7.0.0.tar.gz 
+
+RUN source activate py39 && pip install ./antismash-7.0.0
+RUN source activate py39 && download-antismash-databases && antismash --check-prereqs
+
+
+
+
+
+#RUN  wget https://dl.secondarymetabolites.org/antismash-stretch.list -O /etc/apt/sources.list.d/antismash.list
+#RUN  wget -q -O- https://dl.secondarymetabolites.org/antismash.asc | sudo apt-key add -
+#RUN  apt-get update
+#RUN apt-get install -y  hmmer2 hmmer  fasttree prodigal ncbi-blast+ muscle glimmerhmm
+#RUN wget --quiet https://github.com/bbuchfink/diamond/releases/download/v2.0.9/diamond-linux64.tar.gz && \
+#    tar -zxf diamond-linux64.tar.gz diamond && \
+#    mv diamond /usr/bin/diamond && \
+#    diamond version
+
+#WORKDIR /tmp
+#RUN wget https://dl.secondarymetabolites.org/releases/6.0.0/antismash-6.0.0.tar.gz && tar -zxf antismash-6.0.0.tar.gz 
+
+#RUN sed -i 's/biopython >=1.78/biopython==1.76/' antismash-6.0.0/setup.py
+#RUN sed -i 's/jinja2/jinja2==3.0.0/' antismash-6.0.0/setup.py
+
+#RUN source activate py39 && pip install ./antismash-6.0.0
+#RUN source activate py39 && download-antismash-databases
 
 
 #===========
 
 
 COPY . /kb/module
-RUN cp /kb/module/InsdcIO.py /miniconda/envs/py39/lib/python3.9/site-packages/Bio/SeqIO/InsdcIO.py
+#RUN cp /kb/module/InsdcIO.py /miniconda/envs/py39/lib/python3.9/site-packages/Bio/SeqIO/InsdcIO.py
 
 RUN pip install pandas
 
