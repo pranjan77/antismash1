@@ -137,7 +137,7 @@ class AntismashUtils:
  
         
 
-    def create_html_report(self, output_dir, workspace_name):
+    def create_html_report(self, output_dir, workspace_name, objects_created):
         '''
         function for creating html report
         :param callback_url:
@@ -174,6 +174,7 @@ class AntismashUtils:
                         'report_object_name': report_name,
                         'workspace_name': workspace_name
                     })
+        report_info['objects_created'] = objects_created
         return {
             'report_name': report_info['name'],
             'report_ref': report_info['ref']
@@ -196,6 +197,41 @@ class AntismashUtils:
                           json_files.append(json_path)
           return json_files  
 
+    def find_antismash_full_gbk(self):
+          directory = self.result_dir
+          genome_paths = list()
+          for genome in os.listdir(directory):
+              newpath  = os.path.join(directory, genome)
+              if os.path.isdir(newpath):
+                  for npath in os.listdir(newpath):
+                      if npath.endswith(".gbk"):
+                          if "region" not in npath:
+                             gpath  = os.path.join(newpath, npath)
+                             genome_paths.append (gpath)  
+          return genome_paths
+
+    def save_genbank_genomes(self, genome_paths):
+        genome_refs = list()
+        for genbank_file_path in genome_paths:
+            genome_name = os.path.basename(genbank_file_path).split('/')[-1]
+            try:
+                result = self.gfu.genbank_to_genome({
+                'file': {
+                'path': genbank_file_path,
+                 },
+                'source': "KBASE ANTISMASH",
+                'genome_name': genome_name,
+                'workspace_name': self.workspace_name,
+                'generate_ids_if_needed':1
+                 })
+
+                ref = result[0]['genome_ref']
+                genome_refs.append(ref)
+            except:
+               print( "Error in saving genome: " + genbank_file_path )
+
+        return genome_refs
+
     def create_html_tables_from_json(self):
         #json_list = ["./Bacillus_sp_OV322_assembly2.json", "./Bacillus_sp_OV322_assembly.json"]
         json_list = self.find_antismash_json_outputs()
@@ -205,7 +241,9 @@ class AntismashUtils:
         df = AP.generate_tsv_from_lists(antismash_parse_data, key)
         mibigoutput_file = os.path.join(self.result_dir, "mibig.html")
         htmlpath = AP.get_html_from_df(df, mibigoutput_file)
-        
+       
+
+    
     def run_antismash_main(self,genome_refs):
             result_dir = os.path.join(self.scratch, str(uuid.uuid4()))
             self.result_dir = result_dir
@@ -222,13 +260,17 @@ class AntismashUtils:
                 genome_folder_path = os.path.join(result_dir, genome_folder_name)
                 run_index = self.run_antismash_single(result_dir, gff_file_path, fasta_file_path,  genome_folder_name) 
                 html_str += "<a href='./" + str(run_index) + "'>" + genome_folder_name + "</a>\n";
-                      
+                     
+            genomes_to_save = self.find_antismash_full_gbk()
+            genome_objects_created = self.save_genbank_genomes(genomes_to_save)
+
+
             html_str += "</pre></body></html>"
             print (html_str)
             self.add_html_page(result_dir, html_str)
 
             self.create_html_tables_from_json()
-            output = self.create_html_report(result_dir, self.workspace_name)            
+            output = self.create_html_report(result_dir, self.workspace_name, genome_objects_created)            
             return output
 
 
