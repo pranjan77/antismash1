@@ -1,7 +1,7 @@
 #
 # define display information
 #
-name: Run Antismash analysis
+name: Annotate Genomes with Biosynthetic Gene Clusters using Antismash
 
 tooltip: |
      Annotate Genomes with Biosynthetic Gene Clusters using Antismash
