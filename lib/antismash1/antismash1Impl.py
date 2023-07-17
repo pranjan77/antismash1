@@ -5,7 +5,7 @@ import os
 import subprocess
 from installed_clients.KBaseReportClient import KBaseReport
 from antismash1.Utils.AntismashUtils import AntismashUtils
-
+from installed_clients.WorkspaceClient import Workspace as workspaceService
 #END_HEADER
 
 
@@ -60,9 +60,23 @@ class antismash1:
         # ctx is the context object
         # return variables are: output
         #BEGIN run_antismash
-        genome_refs = params['genome_refs']
-        f = AntismashUtils(self.config, params)
-        output = f.run_antismash_main(genome_refs)
+        genome_input_refs = params['genome_refs']
+
+        genome_refs = list()
+        for genome_input_ref in genome_input_refs:
+            wsClient = workspaceService(self.ws_url, token=ctx['token'])
+            genome_info = wsClient.get_object_info_new({'objects': [{'ref': genome_input_ref}]})[0]
+            genome_input_type = genome_info[2]
+
+        if 'GenomeSet' in genome_input_type:
+            genomeSet_object = wsClient.get_objects2({'objects': [{'ref': genome_input_ref}]})['data'][0]['data']
+            for ref_dict in genomeSet_object['elements'].values():
+                genome_refs.append(ref_dict['ref'])
+        else:
+            genome_refs.append(genome_input_ref)
+
+        AS = AntismashUtils(self.config, params)
+        output = AS.run_antismash_main(genome_refs)
         print (output)
 
         #END run_antismash

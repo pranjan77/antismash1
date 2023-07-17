@@ -4,7 +4,7 @@
 name: Run Antismash analysis
 
 tooltip: |
-    Run Antismash analysis
+     Annotate Genomes for Biosynthetic Gene Clusters with Antismash
 
 screenshots: []
 
@@ -26,11 +26,10 @@ suggestions:
 parameters :
     genome_refs :
         ui-name : |
-            Genomes
+            Genome/genome set to be annotated
         short-hint : |
-            Genomes
-        long-hint  : |
-            Genomes
+            The genome(s) you want to annotate with Antismash
+            
 
 description : |
-    <p>Run Antismash analysis</p>
+    <p>Antismash analysis</p>
