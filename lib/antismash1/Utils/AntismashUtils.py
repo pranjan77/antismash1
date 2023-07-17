@@ -14,7 +14,7 @@ from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.WorkspaceClient import Workspace
 from installed_clients.KBaseReportClient import KBaseReport
 from .AntismashParser import AntismashParser
-
+from .bgc_counts_parser import BGCCounter
 
 ANTISMASH_SCRIPT="/kb/module/lib/antismash1/Utils/run_antismash.sh"
 
@@ -211,7 +211,7 @@ class AntismashUtils:
           return genome_paths
 
     def save_genbank_genomes(self, genome_paths):
-        genome_refs = list()
+        objects_created = list()
         for genbank_file_path in genome_paths:
             genome_name = os.path.basename(genbank_file_path).split('/')[-1]
             try:
@@ -226,22 +226,12 @@ class AntismashUtils:
                  })
 
                 ref = result[0]['genome_ref']
-                genome_refs.append(ref)
+                objects_created.append({"ref":ref, "description": "Genome with antismash predicted Biosynthetic Gene Clusters(BGCs)"})
             except:
                print( "Error in saving genome: " + genbank_file_path )
 
-        return genome_refs
+        return objects_created
 
-    def create_html_tables_from_json(self):
-        #json_list = ["./Bacillus_sp_OV322_assembly2.json", "./Bacillus_sp_OV322_assembly.json"]
-        json_list = self.find_antismash_json_outputs()
-        AP = AntismashParser()
-        antismash_parse_data = AP.process_multiple_genomes(json_list)
-        key = "mibig"
-        df = AP.generate_tsv_from_lists(antismash_parse_data, key)
-        mibigoutput_file = os.path.join(self.result_dir, "mibig.html")
-        htmlpath = AP.get_html_from_df(df, mibigoutput_file)
-       
 
     
     def run_antismash_main(self,genome_refs):
@@ -249,8 +239,6 @@ class AntismashUtils:
             self.result_dir = result_dir
   
             self._mkdir_p(result_dir)
-            html_str = "<html><body><pre>"
-            html_str += "<a href='mibig.html'>migbig results</a>\n"
             for genome_ref in genome_refs:
                 g_download = self.get_fasta_gff_file_path(genome_ref)
                 gff_file_path = g_download.get('gff')
@@ -259,18 +247,18 @@ class AntismashUtils:
                 genome_folder_name = self.get_genome_folder_name(genome_ref)
                 genome_folder_path = os.path.join(result_dir, genome_folder_name)
                 run_index = self.run_antismash_single(result_dir, gff_file_path, fasta_file_path,  genome_folder_name) 
-                html_str += "<a href='./" + str(run_index) + "'>" + genome_folder_name + "</a>\n";
                      
             genomes_to_save = self.find_antismash_full_gbk()
             genome_objects_created = self.save_genbank_genomes(genomes_to_save)
 
+            print (genome_objects_created)
 
-            html_str += "</pre></body></html>"
-            print (html_str)
+            BG = BGCCounter(self.result_dir)
+            html_str = BG.get_bgc_table()  
             self.add_html_page(result_dir, html_str)
 
-            self.create_html_tables_from_json()
+            #self.create_html_tables_from_json()
             output = self.create_html_report(result_dir, self.workspace_name, genome_objects_created)            
             return output
 
-
+#

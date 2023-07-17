@@ -1,0 +1,413 @@
+{
+  "ontology": "Antismash_cv",
+  "format_version": "N/A",
+  "date": "2023-07-11-2023 11-01-58",
+  "data_version": "01-Mar-2023",
+  "term_hash": {
+    "AS:2dos": {
+      "name": "2-deoxy-streptamine aminoglycoside",
+      "id": "2dos",
+      "synonyms": []
+    },
+    "AS:acyl_amino_acids": {
+      "name": "N-acyl amino acid",
+      "id": "acyl_amino_acids",
+      "synonyms": []
+    },
+    "AS:aminocoumarin": {
+      "name": "Aminocoumarin",
+      "id": "aminocoumarin",
+      "synonyms": []
+    },
+    "AS:aminopolycarboxylic-acid": {
+      "name": "Aminopolycarboxylic acid metallophores (doi:10.1039/C8MT00009C)",
+      "id": "aminopolycarboxylic-acid",
+      "synonyms": []
+    },
+    "AS:amglyccycl": {
+      "name": "Aminoglycoside/aminocyclitol",
+      "id": "amglyccycl",
+      "synonyms": []
+    },
+    "AS:arylpolyene": {
+      "name": "Aryl polyene",
+      "id": "arylpolyene",
+      "synonyms": []
+    },
+    "AS:betalactone": {
+      "name": "Beta-lactone containing protease inhibitor",
+      "id": "betalactone",
+      "synonyms": []
+    },
+    "AS:blactam": {
+      "name": "\u03b2-lactam",
+      "id": "blactam",
+      "synonyms": []
+    },
+    "AS:bottromycin": {
+      "name": "Bottromycin",
+      "id": "bottromycin",
+      "synonyms": []
+    },
+    "AS:butyrolactone": {
+      "name": "Butyrolactone",
+      "id": "butyrolactone",
+      "synonyms": []
+    },
+    "AS:CDPS": {
+      "name": "tRNA-dependent cyclodipeptide synthases",
+      "id": "CDPS",
+      "synonyms": []
+    },
+    "AS:crocagin": {
+      "name": "Crocagin-like",
+      "id": "crocagin",
+      "synonyms": []
+    },
+    "AS:cyanobactin": {
+      "name": "Cyanobactins like patellamide (AY986476)",
+      "id": "cyanobactin",
+      "synonyms": []
+    },
+    "AS:cyclic-lactone-autoinducer": {
+      "name": "agrD-like cyclic lactone autoinducer peptides (AF001782)",
+      "id": "cyclic-lactone-autoinducer",
+      "synonyms": []
+    },
+    "AS:ectoine": {
+      "name": "Ectoine",
+      "id": "ectoine",
+      "synonyms": []
+    },
+    "AS:epipeptide": {
+      "name": "D-amino-acid containing RiPPs such as yydF (D78193)",
+      "id": "epipeptide",
+      "synonyms": []
+    },
+    "AS:fatty_acid": {
+      "name": "Fatty acid (loose strictness, likely from primary metabolism)",
+      "id": "fatty_acid",
+      "synonyms": []
+    },
+    "AS:furan": {
+      "name": "Furan",
+      "id": "furan",
+      "synonyms": []
+    },
+    "AS:fungal-RiPP": {
+      "name": "Fungal RiPP with POP or UstH peptidase types and a modification",
+      "id": "fungal-RiPP",
+      "synonyms": []
+    },
+    "AS:fungal-RiPP-like": {
+      "name": "Fungal RiPP-likes",
+      "id": "fungal-RiPP-like",
+      "synonyms": []
+    },
+    "AS:glycocin": {
+      "name": "Glycocin",
+      "id": "glycocin",
+      "synonyms": []
+    },
+    "AS:guanidinotides": {
+      "name": "Pheganomycin-style protein ligase-containing cluster",
+      "id": "guanidinotides",
+      "synonyms": []
+    },
+    "AS:halogenated": {
+      "name": "Halogenase-containing cluster, potentially generating a halogenated product",
+      "id": "halogenated",
+      "synonyms": []
+    },
+    "AS:hglE-KS": {
+      "name": "Heterocyst glycolipid synthase-like PKS",
+      "id": "hglE-KS",
+      "synonyms": []
+    },
+    "AS:hserlactone": {
+      "name": "Homoserine lactone",
+      "id": "hserlactone",
+      "synonyms": []
+    },
+    "AS:indole": {
+      "name": "Indole",
+      "id": "indole",
+      "synonyms": []
+    },
+    "AS:LAP": {
+      "name": "Linear azol(in)e-containing peptides",
+      "id": "LAP",
+      "synonyms": []
+    },
+    "AS:ladderane": {
+      "name": "Ladderane",
+      "id": "ladderane",
+      "synonyms": []
+    },
+    "AS:lanthipeptide class I": {
+      "name": "Class I lanthipeptides like nisin",
+      "id": "lanthipeptide class I",
+      "synonyms": []
+    },
+    "AS:lanthipeptide class II": {
+      "name": "Class II lanthipeptides like mutacin II (U40620)",
+      "id": "lanthipeptide class II",
+      "synonyms": []
+    },
+    "AS:lanthipeptide class III": {
+      "name": "Class III lanthipeptides like labyrinthopeptin (FN178622)",
+      "id": "lanthipeptide class III",
+      "synonyms": []
+    },
+    "AS:lanthipeptide class IV": {
+      "name": "Class IV lanthipeptides like venezuelin (HQ328852)",
+      "id": "lanthipeptide class IV",
+      "synonyms": []
+    },
+    "AS:lanthipeptide class V": {
+      "name": "Glycosylated lanthipeptide/linaridin hybrids like MT210103",
+      "id": "lanthipeptide class V",
+      "synonyms": []
+    },
+    "AS:lassopeptide": {
+      "name": "Lasso peptide",
+      "id": "lassopeptide",
+      "synonyms": []
+    },
+    "AS:linaridin": {
+      "name": "Linear arid peptide such as cypemycin (HQ148718) and salinipeptin (MG788286)",
+      "id": "linaridin",
+      "synonyms": []
+    },
+    "AS:lipolanthine": {
+      "name": "Lanthipeptide class containing N-terminal fatty acids such as MG673929",
+      "id": "lipolanthine",
+      "synonyms": []
+    },
+    "AS:melanin": {
+      "name": "Melanin",
+      "id": "melanin",
+      "synonyms": []
+    },
+    "AS:methanobactin": {
+      "name": "Copper-chelating/transporting peptides (doi:10.1126/science.aap9437)",
+      "id": "methanobactin",
+      "synonyms": []
+    },
+    "AS:microviridin": {
+      "name": "Microviridin",
+      "id": "microviridin",
+      "synonyms": []
+    },
+    "AS:mycosporine-like": {
+      "name": "Molecules containing mycosporine-like amino acid",
+      "id": "mycosporine-like",
+      "synonyms": []
+    },
+    "AS:NAGGN": {
+      "name": "N-acetylglutaminylglutamine amide",
+      "id": "NAGGN",
+      "synonyms": []
+    },
+    "AS:NAPAA": {
+      "name": "Non-alpha poly-amino acids like e-Polylysin",
+      "id": "NAPAA",
+      "synonyms": []
+    },
+    "AS:NI-siderophore": {
+      "name": "NRPS-independent, IucA/IucC-like siderophores (siderophore prior to 7.0)",
+      "id": "NI-siderophore",
+      "synonyms": []
+    },
+    "AS:NRPS": {
+      "name": "Non-ribosomal peptide synthetase",
+      "id": "NRPS",
+      "synonyms": []
+    },
+    "AS:NRPS-like": {
+      "name": "NRPS-like fragment",
+      "id": "NRPS-like",
+      "synonyms": []
+    },
+    "AS:NRP-metallophore": {
+      "name": "Non-ribosomal peptide metallophores",
+      "id": "NRP-metallophore",
+      "synonyms": []
+    },
+    "AS:nucleoside": {
+      "name": "Nucleoside",
+      "id": "nucleoside",
+      "synonyms": []
+    },
+    "AS:oligosaccharide": {
+      "name": "Oligosaccharide",
+      "id": "oligosaccharide",
+      "synonyms": []
+    },
+    "AS:opine-like-metallophore": {
+      "name": "Opine-like zincophores like staphylopine (doi:10.1128/mSystems.00554-20)",
+      "id": "opine-like-metallophore",
+      "synonyms": []
+    },
+    "AS:other": {
+      "name": "Cluster containing a secondary metabolite-related protein that does not fit into any other category",
+      "id": "other",
+      "synonyms": []
+    },
+    "AS:PBDE": {
+      "name": "Polybrominated diphenyl ether",
+      "id": "PBDE",
+      "synonyms": []
+    },
+    "AS:phenazine": {
+      "name": "Phenazine",
+      "id": "phenazine",
+      "synonyms": []
+    },
+    "AS:phosphoglycolipid": {
+      "name": "Phosphoglycolipid",
+      "id": "phosphoglycolipid",
+      "synonyms": []
+    },
+    "AS:phosphonate": {
+      "name": "Phosphonate",
+      "id": "phosphonate",
+      "synonyms": []
+    },
+    "AS:phosphonate-like": {
+      "name": "Phosphonate-like (prior to 7.0 this was the phosphonate rule)",
+      "id": "phosphonate-like",
+      "synonyms": []
+    },
+    "AS:PKS-like": {
+      "name": "Other types of PKS",
+      "id": "PKS-like",
+      "synonyms": []
+    },
+    "AS:PpyS-KS": {
+      "name": "PPY-like pyrone",
+      "id": "PpyS-KS",
+      "synonyms": []
+    },
+    "AS:prodigiosin": {
+      "name": "Serratia-type non-traditional PKS prodigiosin biosynthesis pathway",
+      "id": "prodigiosin",
+      "synonyms": []
+    },
+    "AS:proteusin": {
+      "name": "Proteusin",
+      "id": "proteusin",
+      "synonyms": []
+    },
+    "AS:PUFA": {
+      "name": "Polyunsaturated fatty acid",
+      "id": "PUFA",
+      "synonyms": []
+    },
+    "AS:pyrrolidine": {
+      "name": "Pyrrolidines like described in BGC0001510",
+      "id": "pyrrolidine",
+      "synonyms": []
+    },
+    "AS:ranthipeptide": {
+      "name": "Cys-rich peptides (aka. SCIFF: six Cys in fourty-five) like in CP001581:3481278-3502939",
+      "id": "ranthipeptide",
+      "synonyms": []
+    },
+    "AS:RaS-RiPP": {
+      "name": "Streptide-like thioether-bond RiPPs",
+      "id": "RaS-RiPP",
+      "synonyms": []
+    },
+    "AS:RCDPS": {
+      "name": "Fungal Arginine-containing cyclic dipeptides",
+      "id": "RCDPS",
+      "synonyms": []
+    },
+    "AS:redox-cofactor": {
+      "name": "Redox-cofactors such as PQQ (NC_021985:1458906-1494876)",
+      "id": "redox-cofactor",
+      "synonyms": []
+    },
+    "AS:resorcinol": {
+      "name": "Resorcinol",
+      "id": "resorcinol",
+      "synonyms": []
+    },
+    "AS:RiPP-like": {
+      "name": "Other unspecified ribosomally synthesised and post-translationally modified peptide product (RiPP)",
+      "id": "RiPP-like",
+      "synonyms": []
+    },
+    "AS:RRE-containing": {
+      "name": "RRE-element containing cluster",
+      "id": "RRE-containing",
+      "synonyms": []
+    },
+    "AS:saccharide": {
+      "name": "Saccharide (loose strictness, likely from primary metabolism)",
+      "id": "saccharide",
+      "synonyms": []
+    },
+    "AS:sactipeptide": {
+      "name": "Sactipeptide",
+      "id": "sactipeptide",
+      "synonyms": []
+    },
+    "AS:spliceotide": {
+      "name": "RiPPs containing plpX type spliceases (NZ_KB235920:17899-42115)",
+      "id": "spliceotide",
+      "synonyms": []
+    },
+    "AS:T1PKS": {
+      "name": "Type I PKS (Polyketide synthase)",
+      "id": "T1PKS",
+      "synonyms": []
+    },
+    "AS:T2PKS": {
+      "name": "Type II PKS",
+      "id": "T2PKS",
+      "synonyms": []
+    },
+    "AS:T3PKS": {
+      "name": "Type III PKS",
+      "id": "T3PKS",
+      "synonyms": []
+    },
+    "AS:terpene": {
+      "name": "Terpene",
+      "id": "terpene",
+      "synonyms": []
+    },
+    "AS:thioamitides": {
+      "name": "Thioamitide RiPPs as found in JOBF01000011",
+      "id": "thioamitides",
+      "synonyms": []
+    },
+    "AS:thioamide-NRP": {
+      "name": "Thioamide-containing non-ribosomal peptide",
+      "id": "thioamide-NRP",
+      "synonyms": []
+    },
+    "AS:thiopeptide": {
+      "name": "Thiopeptide",
+      "id": "thiopeptide",
+      "synonyms": []
+    },
+    "AS:transAT-PKS": {
+      "name": "Trans-AT PKS",
+      "id": "transAT-PKS",
+      "synonyms": []
+    },
+    "AS:transAT-PKS-like": {
+      "name": "Trans-AT PKS fragment, with trans-AT domain not found",
+      "id": "transAT-PKS-like",
+      "synonyms": []
+    },
+    "AS:tropodithietic-acid": {
+      "name": "Tropodithietic acid",
+      "id": "tropodithietic-acid",
+      "synonyms": []
+    }
+  }
+}

@@ -1,0 +1,82 @@
+Label	Description	Added	Last updated
+2dos	2-deoxy-streptamine aminoglycoside	7.0	7.0
+acyl_amino_acids	N-acyl amino acid	4.0	4.1
+aminocoumarin	Aminocoumarin	<= 3.0	<= 3.0
+aminopolycarboxylic-acid	Aminopolycarboxylic acid metallophores (doi:10.1039/C8MT00009C)	7.0	7.0
+amglyccycl	Aminoglycoside/aminocyclitol	<= 3.0	<= 3.0
+arylpolyene	Aryl polyene	<= 3.0	<= 3.0
+betalactone	Beta-lactone containing protease inhibitor	5.0	5.0
+blactam	β-lactam	<= 3.0	<= 3.0
+bottromycin	Bottromycin	<= 3.0	<= 3.0
+butyrolactone	Butyrolactone	<= 3.0	<= 3.0
+CDPS	tRNA-dependent cyclodipeptide synthases	5.0	5.0
+crocagin	Crocagin-like	7.0	7.0
+cyanobactin	Cyanobactins like patellamide (AY986476)	<= 3.0	7.0
+cyclic-lactone-autoinducer	agrD-like cyclic lactone autoinducer peptides (AF001782)	6.0	6.0
+ectoine	Ectoine	<= 3.0	<= 3.0
+epipeptide	D-amino-acid containing RiPPs such as yydF (D78193)	6.0	6.0
+fatty_acid	Fatty acid (loose strictness, likely from primary metabolism)	<= 3.0	4.2
+furan	Furan	<= 3.0	5.0
+fungal-RiPP	Fungal RiPP with POP or UstH peptidase types and a modification	5.0	5.0
+fungal-RiPP-like	Fungal RiPP-likes	7.0	7.0
+glycocin	Glycocin	<= 3.0	<= 3.0
+guanidinotides	Pheganomycin-style protein ligase-containing cluster	4.0	6.0
+halogenated	Halogenase-containing cluster, potentially generating a halogenated product	5.0	5.0
+hglE-KS	Heterocyst glycolipid synthase-like PKS	5.0	5.0
+hserlactone	Homoserine lactone	<= 3.0	<= 3.0
+indole	Indole	<= 3.0	4.0
+LAP	Linear azol(in)e-containing peptides	<= 3.0	6.0
+ladderane	Ladderane	<= 3.0	<= 3.0
+lanthipeptide class I	Class I lanthipeptides like nisin	4.2	6.0
+lanthipeptide class II	Class II lanthipeptides like mutacin II (U40620)	4.2	6.0
+lanthipeptide class III	Class III lanthipeptides like labyrinthopeptin (FN178622)	4.2	6.0
+lanthipeptide class IV	Class IV lanthipeptides like venezuelin (HQ328852)	4.2	6.0
+lanthipeptide class V	Glycosylated lanthipeptide/linaridin hybrids like MT210103	5.1	6.0
+lassopeptide	Lasso peptide	<= 3.0	5.0
+linaridin	Linear arid peptide such as cypemycin (HQ148718) and salinipeptin (MG788286)	<= 3.0	<= 3.0
+lipolanthine	Lanthipeptide class containing N-terminal fatty acids such as MG673929	5.0	5.0
+melanin	Melanin	<= 3.0	<= 3.0
+methanobactin	Copper-chelating/transporting peptides (doi:10.1126/science.aap9437)	7.0	7.0
+microviridin	Microviridin	<= 3.0	<= 3.0
+mycosporine-like	Molecules containing mycosporine-like amino acid	7.0	7.0
+NAGGN	N-acetylglutaminylglutamine amide	5.0	5.0
+NAPAA	Non-alpha poly-amino acids like e-Polylysin	6.0	7.0
+NI-siderophore	NRPS-independent, IucA/IucC-like siderophores (siderophore prior to 7.0)	7.0	7.0
+NRPS	Non-ribosomal peptide synthetase	<= 3.0	6.0
+NRPS-like	NRPS-like fragment	5.0	5.0
+NRP-metallophore	Non-ribosomal peptide metallophores	7.0	7.0
+nucleoside	Nucleoside	<= 3.0	5.0
+oligosaccharide	Oligosaccharide	<= 3.0	<= 3.0
+opine-like-metallophore	Opine-like zincophores like staphylopine (doi:10.1128/mSystems.00554-20)	7.0	7.0
+other	Cluster containing a secondary metabolite-related protein that does not fit into any other category	4.0	5.0
+PBDE	Polybrominated diphenyl ether	4.1	4.1
+phenazine	Phenazine	<= 3.0	<= 3.0
+phosphoglycolipid	Phosphoglycolipid	<= 3.0	<= 3.0
+phosphonate	Phosphonate	<= 3.0	7.0
+phosphonate-like	Phosphonate-like (prior to 7.0 this was the phosphonate rule)	7.0	7.0
+PKS-like	Other types of PKS	5.0	5.0
+PpyS-KS	PPY-like pyrone	4.2	4.2
+prodigiosin	Serratia-type non-traditional PKS prodigiosin biosynthesis pathway	6.0	6.0
+proteusin	Proteusin	<= 3.0	<= 3.0
+PUFA	Polyunsaturated fatty acid	<= 3.0	<= 3.0
+pyrrolidine	Pyrrolidines like described in BGC0001510	6.0	6.0
+ranthipeptide	Cys-rich peptides (aka. SCIFF: six Cys in fourty-five) like in CP001581:3481278-3502939	6.0	6.0
+RaS-RiPP	Streptide-like thioether-bond RiPPs	5.0	5.0
+RCDPS	Fungal Arginine-containing cyclic dipeptides	7.0	7.0
+redox-cofactor	Redox-cofactors such as PQQ (NC_021985:1458906-1494876)	6.0	6.0
+resorcinol	Resorcinol	<= 3.0	<= 3.0
+RiPP-like	Other unspecified ribosomally synthesised and post-translationally modified peptide product (RiPP)	4.1	7.0
+RRE-containing	RRE-element containing cluster	6.0	6.0
+saccharide	Saccharide (loose strictness, likely from primary metabolism)	<= 3.0	<= 3.0
+sactipeptide	Sactipeptide	<= 3.0	6.0
+spliceotide	RiPPs containing plpX type spliceases (NZ_KB235920:17899-42115)	6.0	6.0
+T1PKS	Type I PKS (Polyketide synthase)	<= 3.0	<= 3.0
+T2PKS	Type II PKS	<= 3.0	5.0
+T3PKS	Type III PKS	<= 3.0	<= 3.0
+terpene	Terpene	<= 3.0	4.1
+thioamitides	Thioamitide RiPPs as found in JOBF01000011	5.1	6.0
+thioamide-NRP	Thioamide-containing non-ribosomal peptide	5.0	5.0
+thiopeptide	Thiopeptide	4.2	5.0
+transAT-PKS	Trans-AT PKS	<= 3.0	5.0
+transAT-PKS-like	Trans-AT PKS fragment, with trans-AT domain not found	<= 5.0	5.0
+tropodithietic-acid	Tropodithietic acid	5.0	5.0

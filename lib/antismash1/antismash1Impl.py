@@ -30,34 +30,6 @@ class antismash1:
 
     #BEGIN_CLASS_HEADER
 
-    def run_antismash_single(self,final_report_dir, genbank_file_path, genome_folder_name):
-         os.system("ls /miniconda/envs/py39/bin && source /miniconda/etc/profile.d/conda.sh && conda activate py39  &&  antismash /kb/module/work/sequence.gbk --output-dir /kb/module/work/ndc")
-#source activate py39 && python -m antismash /kb/module/work/sequence.gbk && source deactivatei py39")
-
-#            output_dir = os.path.join(final_report_dir, genome_folder_name)
-#            argstring = "source activate py39  && antismash " + str(genbank_file_path) + " --output-dir=" + str(output_dir)
-#            args = argstring.split(" ")
-#            proc = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # nosec
-#            (stdout, stderr) = proc.communicate()
-#            print('-' * 80)
-#            print('Antismash output:')
-#            print(stdout)
-#            print(stderr)
-#            print('-' * 80)
-#            if proc.returncode != 0:
-#                raise Exception(f"Error generating Antismash output: {stderr}")
-#
-#            index_path=os.path.join(output_dir, "index.html")
-#            if os.path.exists(index_path):
-#                 self.delete_zip(ioutput_dir)
-#            report_genome_index = str(genome_folder_name) + "/" + "index.html"
-#            return report_genome_index
-
-    #x = run_antismash_single(final_report_dir, genbank_file_path, genome_folder_name)
-
-
-
-
  
     #END_CLASS_HEADER
 
@@ -92,16 +64,6 @@ class antismash1:
         f = AntismashUtils(self.config, params)
         output = f.run_antismash_main(genome_refs)
         print (output)
-
-        #final_report_dir = "/kb/module/work"
-        #genbank_file_path = "/kb/module/work/KBase_derived_Bacillus_sp_OV322_assembly_Prokka.RAST.gbff"
-        #genome_folder_name = "zfffr"
-
-        #x = self.run_antismash_single(final_report_dir, genbank_file_path, genome_folder_name)
-        #report = KBaseReport(self.callback_url)
-        #report_info = report.create({'report': {'objects_created':[],
-        #                                        'text_message': "infoxxxxx"},
-        #                                        'workspace_name': params['workspace_name']})
 
         #END run_antismash
 
