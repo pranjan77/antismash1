@@ -4,7 +4,7 @@
 name: Run Antismash analysis
 
 tooltip: |
-     Annotate Genomes for Biosynthetic Gene Clusters with Antismash
+     Annotate Genomes with Biosynthetic Gene Clusters using Antismash
 
 screenshots: []
 
