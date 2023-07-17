@@ -64,4 +64,4 @@ class antismashTest(unittest.TestCase):
         # Check returned data with
         # self.assertEqual(ret[...], ...) or other unittest methods
         ret = self.serviceImpl.run_antismash(self.ctx, {'workspace_name': "pranjan77:narrative_1638896817146",
-                                                             'genome_refs': ['65225/2/2']})
+                                                             'genome_refs': ['65225/2/2', '70893/10/1']})
