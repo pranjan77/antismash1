@@ -60,6 +60,7 @@ class antismash1:
         # ctx is the context object
         # return variables are: output
         #BEGIN run_antismash
+        print (params)
         genome_input_refs = params['genome_refs']
 
         genome_refs = list()
@@ -68,12 +69,15 @@ class antismash1:
             genome_info = wsClient.get_object_info_new({'objects': [{'ref': genome_input_ref}]})[0]
             genome_input_type = genome_info[2]
 
-        if 'GenomeSet' in genome_input_type:
-            genomeSet_object = wsClient.get_objects2({'objects': [{'ref': genome_input_ref}]})['data'][0]['data']
-            for ref_dict in genomeSet_object['elements'].values():
-                genome_refs.append(ref_dict['ref'])
-        else:
-            genome_refs.append(genome_input_ref)
+            if 'GenomeSet' in genome_input_type:
+                genomeSet_object = wsClient.get_objects2({'objects': [{'ref': genome_input_ref}]})['data'][0]['data']
+                for ref_dict in genomeSet_object['elements'].values():
+                    genome_refs.append(ref_dict['ref'])
+            else:
+                genome_refs.append(genome_input_ref)
+
+        genome_refs = list(set(genome_refs))
+        print (genome_refs)
 
         AS = AntismashUtils(self.config, params)
         output = AS.run_antismash_main(genome_refs)
