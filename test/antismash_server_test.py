@@ -71,10 +71,12 @@ class antismashTest(unittest.TestCase):
                   'workspace_id': 71242, 
                   'genome_refs': ['71242/10/1', '71242/11/1'], 
                   'annotation_options': {'cb-knownclusters': 1, 
-                                          'rre': 0, 
-                                          'asf': 0, 
+                                          'rre': 1, 
+                                          'clusterhmmer': 1,
+                                          'smcog-trees':1,
+                                          'asf': 1, 
                                           'tfbs': 1, 
-                                          'cb-subclusters': 0}, 
+                                          'cb-subclusters': 1}, 
                    'save_genome_options': {'save_genome': 1, 
                                            'suffix': '_antismash'}}
 

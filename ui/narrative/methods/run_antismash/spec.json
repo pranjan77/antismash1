@@ -82,6 +82,32 @@
             }
         },
         {
+            "id": "clusterhmmer",
+            "optional": true,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "0" ],
+            "field_type": "checkbox",
+             "checkbox_options":{
+                "checked_value": 1,
+                "unchecked_value": 0
+            }
+        },
+
+        {
+            "id": "smcog-trees",
+            "optional": true,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "0" ],
+            "field_type": "checkbox",
+             "checkbox_options":{
+                "checked_value": 1,
+                "unchecked_value": 0
+            }
+        },
+
+        {
             "id" : "suffix",
             "optional" : false,
             "advanced" : false,
@@ -109,7 +135,7 @@
 
         {
             "id": "annotation_options",
-            "parameters": ["cb-knownclusters", "rre", "asf","tfbs", "cb-subclusters"],
+            "parameters": ["cb-knownclusters", "rre", "asf","tfbs", "cb-subclusters", "clusterhmmer", "smcog-trees"],
             "optional": false,
             "allow_multiple": false,
             "with_border": true

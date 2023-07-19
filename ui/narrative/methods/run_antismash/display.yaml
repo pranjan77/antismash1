@@ -57,6 +57,20 @@ parameters :
          short-hint : |
              Compare identified clusters against known subclusters responsible for synthesising precursors
 
+
+    clusterhmmer : 
+         ui-name: |
+             cluster-limited HMMer analysis
+         short-hint : |
+             Run a cluster-limited HMMer analysis
+
+    smcog-trees : 
+         ui-name: |
+             Phylogenetic tree of BCG cluster groups
+         short-hint : |
+             Generate phylogenetic trees of sec. met. cluster orthologous groups
+
+
     save_genome : 
          ui-name: |
              Save Genome
