@@ -44,13 +44,14 @@ class antismashTest(unittest.TestCase):
         cls.callback_url = os.environ['SDK_CALLBACK_URL']
         suffix = int(time.time() * 1000)
         cls.wsName = "test_ContigFilter_" + str(suffix)
-        ret = cls.wsClient.create_workspace({'workspace': cls.wsName})  # noqa
+#        ret = cls.wsClient.create_workspace({'workspace': cls.wsName})  # noqa
 
     @classmethod
     def tearDownClass(cls):
         if hasattr(cls, 'wsName'):
-            cls.wsClient.delete_workspace({'workspace': cls.wsName})
-            print('Test workspace was deleted')
+            pass
+            #cls.wsClient.delete_workspace({'workspace': cls.wsName})
+            #print('Test workspace was deleted')
 
     # NOTE: According to Python unittest naming rules test method names should start from 'test'. # noqa
     def test_your_method(self):
@@ -63,5 +64,20 @@ class antismashTest(unittest.TestCase):
         #
         # Check returned data with
         # self.assertEqual(ret[...], ...) or other unittest methods
-        ret = self.serviceImpl.run_antismash(self.ctx, {'workspace_name': "pranjan77:narrative_1638896817146",
-                                                             'genome_refs': ['65225/2/2', '70893/10/1']})
+#        ret = self.serviceImpl.run_antismash(self.ctx, {'workspace_name': "pranjan77:narrative_1638896817146",
+#                                                             'genome_refs': ['65225/2/2', '70893/10/1']})
+
+        params = {'workspace_name': 'pranjan77:narrative_1689190543032', 
+                  'workspace_id': 71242, 
+                  'genome_refs': ['71242/10/1', '71242/11/1'], 
+                  'annotation_options': {'cb-knownclusters': 1, 
+                                          'rre': 0, 
+                                          'asf': 0, 
+                                          'tfbs': 1, 
+                                          'cb-subclusters': 0}, 
+                   'save_genome_options': {'save_genome': 1, 
+                                           'suffix': '_antismash'}}
+
+        ret = self.serviceImpl.run_antismash(self.ctx, params)
+
+

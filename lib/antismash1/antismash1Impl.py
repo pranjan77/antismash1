@@ -62,6 +62,21 @@ class antismash1:
         #BEGIN run_antismash
         print (params)
         genome_input_refs = params['genome_refs']
+        antismash_options_str = ""
+        for k in params['annotation_options']:
+            if params['annotation_options'][k]==1:
+                antismash_options_str += " --" + str(k)
+
+        print (antismash_options_str)
+
+        save_genome_options = params["save_genome_options"]
+        #if params["save_genome_options"]["save_genome"] == 1:
+        #    if len(params["save_genome_options"]['suffix']) > 0:
+        #        genome_suffix = params["save_genome_options"]['suffix']
+        #    else:
+        #        genome_suffix = "_antismash"
+        #else:
+        #    genome_suffix = None
 
         genome_refs = list()
         for genome_input_ref in genome_input_refs:
@@ -76,11 +91,14 @@ class antismash1:
             else:
                 genome_refs.append(genome_input_ref)
 
+        
+
         genome_refs = list(set(genome_refs))
         print (genome_refs)
 
         AS = AntismashUtils(self.config, params)
-        output = AS.run_antismash_main(genome_refs)
+        output = AS.run_antismash_main(genome_refs, antismash_options_str, save_genome_options)
+    
         print (output)
 
         #END run_antismash

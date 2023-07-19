@@ -73,13 +73,12 @@ RUN source activate py39 && download-antismash-databases && antismash --check-pr
 #RUN source activate py39 && download-antismash-databases
 
 
+RUN pip install pandas
 #===========
 
 
 COPY . /kb/module
-#RUN cp /kb/module/InsdcIO.py /miniconda/envs/py39/lib/python3.9/site-packages/Bio/SeqIO/InsdcIO.py
 
-RUN pip install pandas
 
 RUN mkdir -p /kb/module/work
 RUN chmod -R a+rw /kb/module

@@ -105,10 +105,10 @@ class AntismashUtils:
          return {"gff": n_gff_file_path, "fasta":n_fasta_file_path} 
 
 
-    def run_antismash_single(self, final_report_dir, gff_file_path, fasta_file_path, genome_folder_name):
+    def run_antismash_single(self, final_report_dir, gff_file_path, fasta_file_path, genome_folder_name, antismash_options_str):
 
         output_dir = os.path.join(final_report_dir, genome_folder_name)
-        argstring = ANTISMASH_SCRIPT + " "  + fasta_file_path + " " + gff_file_path + " "  +  output_dir
+        argstring = ANTISMASH_SCRIPT + " "  + fasta_file_path + " " + gff_file_path + " "  +  output_dir + " " + antismash_options_str
         print (argstring)
         args = argstring.split(" ")
         proc = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # nosec
@@ -234,7 +234,7 @@ class AntismashUtils:
 
 
     
-    def run_antismash_main(self,genome_refs):
+    def run_antismash_main(self,genome_refs, antismash_options_str, save_genome_options):
             result_dir = os.path.join(self.scratch, str(uuid.uuid4()))
             self.result_dir = result_dir
   
@@ -246,10 +246,13 @@ class AntismashUtils:
 
                 genome_folder_name = self.get_genome_folder_name(genome_ref)
                 genome_folder_path = os.path.join(result_dir, genome_folder_name)
-                run_index = self.run_antismash_single(result_dir, gff_file_path, fasta_file_path,  genome_folder_name) 
+                run_index = self.run_antismash_single(result_dir, gff_file_path, fasta_file_path,  genome_folder_name, antismash_options_str) 
                      
             genomes_to_save = self.find_antismash_full_gbk()
-            genome_objects_created = self.save_genbank_genomes(genomes_to_save)
+            if save_genome_options['save_genome'] == 1:
+                genome_objects_created = self.save_genbank_genomes(genomes_to_save)
+            else:
+                genome_objects_created = []
 
             print (genome_objects_created)
 
