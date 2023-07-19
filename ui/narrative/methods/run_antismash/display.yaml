@@ -1,7 +1,7 @@
 #
 # define display information
 #
-name: Annotate Genomes with Biosynthetic Gene Clusters using Antismash
+name: Annotate Genomes with Biosynthetic Gene Clusters using Antismash V7
 
 tooltip: |
      Annotate Genomes with Biosynthetic Gene Clusters using Antismash
@@ -29,7 +29,60 @@ parameters :
             Genome/genome set to be annotated
         short-hint : |
             The genome(s) you want to annotate with Antismash
-            
+        
+    cb-knownclusters :
+        ui-name : |
+            Compare with known clusters in MIBiG database
+        short-hint : |
+            Compare identified clusters against known gene clusters from the MIBiG database
+    asf :
+        ui-name : |
+            Active site finder
+        short-hint : |
+            Run active site finder analysis
+    rre :
+        ui-name : |
+            RREFinder precision mode
+        short-hint : |
+            Run RREFinder precision mode on all RiPP gene
+    tfbs :
+        ui-name : |
+            TFBS finder
+        short-hint : |
+            Run TFBS finder on all gene cluster
+        
+    cb-subclusters : 
+         ui-name: |
+             Known subclusters
+         short-hint : |
+             Compare identified clusters against known subclusters responsible for synthesising precursors
+
+    save_genome : 
+         ui-name: |
+             Save Genome
+         short-hint : |
+             Save Antismash annotated Genome
+    suffix : 
+         ui-name: |
+             Suffix for Antismash annotated Genome
+         short-hint : |
+             Suffix for Antismash annotated genome
+ 
+
+parameter-groups :
+    annotation_options :
+        ui-name : |
+             Annotation options
+        short-hint : |
+             Annotation options
+
+    save_genome_options :
+        ui-name : |
+             Save Genome options
+        short-hint : |
+             Save Genome options
+
+
 
 description : |
     <p>Antismash analysis</p>

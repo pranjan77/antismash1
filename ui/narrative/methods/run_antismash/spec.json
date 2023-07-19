@@ -4,7 +4,7 @@
         "pranjan77"
     ],
     "contact": "",
-    "categories": ["active"],
+    "categories": ["active", "annotation"],
     "widgets": {
         "input": null,
         "output": null
@@ -20,8 +20,108 @@
             "text_options": {
                 "valid_ws_types": ["KBaseGenomes.Genome", "KBaseSearch.GenomeSet", "KBaseCollections.GenomeSet" ]
             }
+        },
+        {
+            "id": "cb-knownclusters",
+            "optional": true,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "1" ],
+            "field_type": "checkbox",
+             "checkbox_options":{
+                "checked_value": 1,
+                "unchecked_value": 0
+            }
+        },
+        {
+            "id": "asf",
+            "optional": true,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "0" ],
+            "field_type": "checkbox",
+             "checkbox_options":{
+                "checked_value": 1,
+                "unchecked_value": 0
+            }
+        },
+        {
+            "id": "rre",
+            "optional": true,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "0" ],
+            "field_type": "checkbox",
+             "checkbox_options":{
+                "checked_value": 1,
+                "unchecked_value": 0
+            }
+        },
+        {
+            "id": "tfbs",
+            "optional": true,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "0" ],
+            "field_type": "checkbox",
+             "checkbox_options":{
+                "checked_value": 1,
+                "unchecked_value": 0
+            }
+        },
+        {
+            "id": "cb-subclusters",
+            "optional": true,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "0" ],
+            "field_type": "checkbox",
+             "checkbox_options":{
+                "checked_value": 1,
+                "unchecked_value": 0
+            }
+        },
+        {
+            "id" : "suffix",
+            "optional" : false,
+            "advanced" : false,
+            "allow_multiple" : false,
+            "default_values" : [ "_antismash" ],
+            "field_type" : "text",
+            "text_options" : {}
+       },
+       {
+            "id": "save_genome",
+            "optional": false,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "1" ],
+            "field_type": "checkbox",
+             "checkbox_options":{
+                "checked_value": 1,
+                "unchecked_value": 0
+            }
         }
+
     ],
+
+    "parameter-groups": [
+
+        {
+            "id": "annotation_options",
+            "parameters": ["cb-knownclusters", "rre", "asf","tfbs", "cb-subclusters"],
+            "optional": false,
+            "allow_multiple": false,
+            "with_border": true
+        },
+        {
+            "id": "save_genome_options",
+            "parameters": ["save_genome", "suffix"],
+            "optional": false,
+            "allow_multiple": false,
+            "with_border": true
+        }
+	],
     "behavior": {
         "service-mapping": {
             "url": "",
@@ -37,7 +137,15 @@
                 },{
                     "input_parameter": "genome_refs",
                     "target_property": "genome_refs"
+                },{
+                    "input_parameter": "annotation_options",
+                    "target_property": "annotation_options"
+                },{
+                    "input_parameter": "save_genome_options",
+                    "target_property": "save_genome_options"
                 }
+
+
             ],
             "output_mapping": [
                 {
