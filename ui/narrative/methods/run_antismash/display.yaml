@@ -100,3 +100,35 @@ parameter-groups :
 
 description : |
     <p>Antismash analysis</p>
+    <div class="app-description">
+         <p>
+          The Annotate Genomes with Biosynthetic Gene Clusters using Antismash V7 app allows the user to input either (1) genome(s) or (2) genome set to be annotated by Antismash. As described in [1], antiSMASH takes microbial genome sequences as input and detects the biosynthetic pathways associated with secondary metabolite production using a rule-based approach (Step 1 Detection). In Step 2 (Analysis), the regions can be analyzed in a type dependent or type independent way. Certain BGCs, including NRPSs, lanthipeptides, and type I and type II PKSs, can undergo cluster-specific analysis which allow for more detail (including further information on resulting metabolites): this is type dependent analysis. Type independent analysis includes methods such as ClusterBlast to compare regions found in Step 1 to similar clusters present in other genomes. The output can be stored in multiple ways including HTML and JSON formats (Step 3, Output). [1] We are using antismash version 7.0.0, the most current version. Internally, the app takes genomes as fasta files. The parameter options are as follows. For the genefinding parameter,  gff3 files are used (--genefinding-gff3, Step 1). Finally, this app uses knownclusters for ClusterBlast (--cb-knownclusters) and MIBiG for ClusterCompare (--cc-mibig) (Step 2). 
+         </p>
+     
+         <p>
+          The Result tab contains a table with the genomes in the first column. The genomes’ hyperlinks direct to the html output from antismash (Step 3). The remaining columns contain the protocluster counts extracted from the antismash output for the genomes. 
+         </p>
+     
+     </div>
+
+
+publication :
+    -
+      pmid:  33978755
+      display-text: |
+             Kai Blin, Simon Shaw, Alexander M Kloosterman, Zach Charlop-Powers, Gilles P van Wezel, Marnix H Medema, Tilmann Weber, antiSMASH 6.0: improving cluster detection and comparison capabilities, <i>>Nucleic Acids Research</i>, Volume 49, Issue W1, 2 July 2021, Pages W29–W35, https://doi.org/10.1093/nar/gkab335
+      link:  https://doi.org/10.1093/nar/gkab335
+
+ 
+
+
+
+publication :
+    -
+      pmid:  37140036
+      display-text: |
+              Kai Blin, Simon Shaw, Hannah E Augustijn, Zachary L Reitz, Friederike Biermann, Mohammad Alanjary, Artem Fetter, Barbara R Terlouw, William W Metcalf, Eric J N Helfrich, Gilles P van Wezel, Marnix H Medema, Tilmann Weber, antiSMASH 7.0: new and improved predictions for detection, regulation, chemical structures and visualisation, <i>> Nucleic Acids Researchogy</i>, Volume 51, Issue W1, 5 July 2023, Pages W46–W50, https://doi.org/10.1093/nar/gkad344
+ 
+      link:  https://doi.org/10.1093/nar/gkad344
+
+ 
