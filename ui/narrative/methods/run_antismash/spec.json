@@ -162,7 +162,8 @@
                     "target_property": "workspace_id"
                 },{
                     "input_parameter": "genome_refs",
-                    "target_property": "genome_refs"
+                    "target_property": "genome_refs",
+		    "target_type_transform":"ref"
                 },{
                     "input_parameter": "annotation_options",
                     "target_property": "annotation_options"
