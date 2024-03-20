@@ -16,6 +16,8 @@ RUN apt-get update && apt-get -y upgrade \
 
 
 
+
+
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN conda create -n py39 python=3.9 \
     && source activate py39 \
@@ -26,11 +28,13 @@ RUN conda create -n py39 python=3.9 \
 
 WORKDIR /tmp
 
-RUN apt-get update && \
-    apt-get -y install apt-transport-https gnupg
+# Install necessary packages
+RUN apt-get update && apt-get install -y wget gnupg2 curl software-properties-common
 
-RUN wget http://dl.secondarymetabolites.org/antismash-stretch.list -O /etc/apt/sources.list.d/antismash.list && \
-    wget -q -O- http://dl.secondarymetabolites.org/antismash.asc | apt-key add -
+# Add the antiSMASH repository and GPG key
+# Note: Replace the URLs with the correct ones if they have changed or if specific versions for Ubuntu 18.04 are available
+RUN wget -O /etc/apt/sources.list.d/antismash.list https://dl.secondarymetabolites.org/antismash-stretch.list && \
+    curl -fsSL https://dl.secondarymetabolites.org/antismash.asc | apt-key add -
 
 RUN apt-get update && \
     apt-get -y install hmmer2 hmmer diamond-aligner fasttree prodigal ncbi-blast+ muscle glimmerhmm

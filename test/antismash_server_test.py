@@ -67,9 +67,9 @@ class antismashTest(unittest.TestCase):
 #        ret = self.serviceImpl.run_antismash(self.ctx, {'workspace_name': "pranjan77:narrative_1638896817146",
 #                                                             'genome_refs': ['65225/2/2', '70893/10/1']})
 
-        params = {'workspace_name': 'pranjan77:narrative_1689190543032', 
-                  'workspace_id': 71242, 
-                  'genome_refs': ['71242/10/1', '71242/11/1'], 
+        params = {'workspace_name': 'pranjan77:narrative_1675119107551', 
+                  'workspace_id':136582, 
+                  'genome_refs': ['136582/389/1', '136582/388/1'], 
                   'annotation_options': {'cb-knownclusters': 1, 
                                           'rre': 1, 
                                           'clusterhmmer': 1,
