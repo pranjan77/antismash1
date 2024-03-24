@@ -103,12 +103,20 @@ description : |
     <div class="app-description">
          <p>
 
-          The Annotate Genomes with Biosynthetic Gene Clusters using Antismash V7 app allows the user to input either (1) a genome(s) or (2) a genome set to be annotated by Antismash. As described in <a href="https://doi.org/10.1093/nar/gkab335">[1]</a>, antiSMASH takes microbial genome sequences as input and detects the biosynthetic pathways associated with secondary metabolite production using a rule-based approach (<i>Step 1</i> Detection). In <i>Step 2</i> (Analysis), the regions can be analyzed in a type dependent or type independent way. Certain BGCs, including NRPSs, lanthipeptides, and type I and type II PKSs, can undergo cluster-specific analysis which allow for more detail (including further information on resulting metabolites): this is type dependent analysis. Type independent analysis includes methods such as ClusterBlast to compare regions found in <i>Step 1</i> to similar clusters present in other genomes. The output can be stored in multiple ways including HTML and JSON formats (<i>Step 3</i>, Output) <a href="https://doi.org/10.1093/nar/gkab335">[1]</a>. We are using antismash version 7.0.0, the most current version. Internally, the app takes genomes as fasta files. The parameter options are as follows. For the genefinding parameter,  gff3 files are used (--genefinding-gff3, <i>Step 1</i>). Finally, this app uses knownclusters for ClusterBlast (--cb-knownclusters) and MIBiG for ClusterCompare (--cc-mibig) (<i>Step 2</i>). 
-         </p>
+
+
+
+          The Annotate Genomes with Biosynthetic Gene Clusters using Antismash V7 app </p><img src="https://github.com/amarsh26/antismash1/blob/main/image/antismash_workflow.png?raw=true" alt="Workflow" align="left" width="15%" /> <p>
+          allows the user to input either (1) a genome(s) or (2) a genome set to be annotated by Antismash. As shown in the figure on the left which is from <a href="https://doi.org/10.1093/nar/gkab335">[1]</a>, AntiSMASH takes microbial genome sequences as input and detects the biosynthetic pathways associated with secondary metabolite production using a rule-based approach (<i>Step 1</i> Detection). In <i>Step 2</i> (Analysis), the regions can be analyzed in a type dependent or type independent way. Certain BGCs, including NRPSs, lanthipeptides, and type I and type II PKSs, can undergo cluster-specific analysis which allow for more detail (including further information on resulting metabolites): this is type dependent analysis. Type independent analysis includes methods such as ClusterBlast to compare regions found in <i>Step 1</i> to similar clusters present in other genomes. The output can be stored in multiple ways including HTML and JSON formats (<i>Step 3</i>, Output) <a href="https://doi.org/10.1093/nar/gkab335">[1]</a>. We are using antismash version 7.0.0, the most current version. Internally, the app takes genomes as fasta files. The parameter options are as follows. For the genefinding parameter,  gff3 files are used (--genefinding-gff3, <i>Step 1</i>). Finally, this app uses knownclusters for ClusterBlast (--cb-knownclusters) and MIBiG for ClusterCompare (--cc-mibig) (<i>Step 2</i>). 
+
+ 
+         
+        </p>
      
          <p>
           The Result tab contains a table with the genomes in the first column. The genomes’ hyperlinks direct to the html output from antismash (<i>Step 3</i>). The remaining columns contain the protocluster counts extracted from the antismash output for the genomes. 
          </p>
+     
      
      </div>
 
